@@ -39,17 +39,16 @@ This project emphasizes teamwork, embedded design principles, and iterative deve
 - Microcontroller Unit:
     - [ESP32-WROVER-E-N16R8](https://www.digikey.com/en/products/detail/espressif-systems/ESP32-WROVER-E-N16R8/11613135?s=N4IgTCBcDaIKIGUAKBmMBaA6gJQPIDU5t050A5ARgDZsAOEAXQF8g)
 - Audio Processing:
-    - [VS1053B-L](https://octopart.com/part/vlsi/VS1053B-L)
+    - [VS1053B](https://octopart.com/part/vlsi/VS1053B-L)
 - File Storage:
     - [MicroSD_card slot](https://www.digikey.com/en/products/detail/molex/5025700893/1866792?msockid=2623ad1ec3e0601e30edbb6bc2936107)
 - Display:
     - [TFT-LCD Color Display](https://www.digikey.com/en/products/detail/newhaven-display-intl/NHD-2-4-240320DA-CTXN/26743729)
 - Power System:
-    - [USB-C](https://www.digikey.com/en/products/detail/molex-llc/1054550101/8575770?curr=usd)
-    - [FS8205A MOSFET IC](https://www.lcsc.com/product-detail/C2830320.html?s_z=n_FS8205)
+    - [USB-C Connector](https://www.digikey.com/en/products/detail/molex-llc/1054550101/8575770?curr=usd)
     - [TP4056 Charge IC](https://www.lcsc.com/product-detail/C16581.html)
-    - [DW01 Protection IC](https://www.lcsc.com/product-detail/C181096.html?s_z=n_DW01)
-    - [3.7V Li‑Po Battery](https://octopart.com/part/panasonic/NCA103450)
+    - [3.7V Li‑Po Battery]()
+    - []
 - User Input: navigation buttons, play/pause, volume control
 
 ---

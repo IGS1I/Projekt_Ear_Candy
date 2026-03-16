@@ -1,0 +1,15 @@
+# Using image provided officially by Espressif
+FROM espressif/idf
+
+# Set a directory to work inside of within the container
+WORKDIR /firmware
+
+# Commands to run:
+# docker build .
+# docker run --rm -v %PWD:/firmware -w /firmware espressif/idf idf.py build
+
+# --rm < delets container after the build finishes
+# -v < Mounts local volume onto container's volume
+# -w < sets container working directory to our code
+# idf.py build < runs "idf.py"'s build command to build firmware
+
