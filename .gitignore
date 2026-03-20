@@ -56,3 +56,4 @@ dkms.conf
 
 # Build Folder(s)
 /firmware/build/
+.vscode/
