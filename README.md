@@ -96,7 +96,7 @@ Make a branch off of main when first starting on a feature so that the base repo
 - Paola Dorado Galicia 
 - Diego Cruz
 - Rodolfo Garcia
-- 
+- Gian Castro
 - 
 - 
 - 
