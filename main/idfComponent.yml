@@ -1,0 +1,4 @@
+dependecies:
+  # Add Project-Specific Dependecies here. System-wide libraries or programs can be added to Dockerfile
+  # so that the container has installs the program dna can use it in our consecutive builds (e.g., Ptyhon, Ninja, etc)
+  spi_master_driver ">=1.00" # example, because it may be included on docker espressif's docker image.

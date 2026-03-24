@@ -2,11 +2,16 @@
 FROM espressif/idf
 
 # Set a directory to work inside of within the container
-WORKDIR /firmware
+WORKDIR /project
 
 # Commands to run:
-# docker build .
-# docker run --rm -v %PWD:/firmware -w /firmware espressif/idf idf.py build
+
+#vWindows:
+# docker run --rm -v %PWD:/project -w /project espressif/idf idf.py build
+
+# Linux
+# docker run --rm -v $PWD:/project -w /project espressif/idf:latest idf.py build
+
 
 # --rm < delets container after the build finishes
 # -v < Mounts local volume onto container's volume

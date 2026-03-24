@@ -55,5 +55,7 @@ dkms.conf
 *.dwo
 
 # Build Folder(s)
-/firmware/build/
+build/
+
+# ide configs
 .vscode/
