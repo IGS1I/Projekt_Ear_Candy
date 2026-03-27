@@ -121,7 +121,7 @@ Make a branch off of main when first starting to work on a feature so that the b
 - Paola Dorado Galicia 
 - Diego Cruz
 - Rodolfo Garcia
-- 
+- Gian Castro
 - 
 - 
 - 
