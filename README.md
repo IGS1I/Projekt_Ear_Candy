@@ -73,22 +73,47 @@ Quick link to [Programming Section](#-programming)
 
 ---
 ## 💿 Programming
-We have set up our project for ESP-IDF use with a main component and secondary components, named to fit the functions and different pieces of our device. 
+The project has been setup for ESP-IDF use with a main component and secondary components, named to fit the functions and different pieces of our device (necessary because of how ESP-isf works). 
 
-Each component has a CMakeLists.txt file that describes which files are source files for the component and which are header/include files, as well as which other components it depends on (using "REQUIRES" inside of idf_component_register). There is no difference to programming at this step, files can be created for each component just make sure to add them to the CMakeLists.txt file. If a folder/directory is made for header files, make sure to swap out the "." for the folder's name in INCLUDE_DIRS.
+Each component has a CMakeLists.txt file that describes which files are source files for the component and which are header/include files, as well as which other components it depends on (using "REQUIRES" inside of idf_component_register).
 
-Alongside ESP-IDF we are using Docker and its dockerfile to minimize the amount of bloat on team computers. The dockerfile will run using Espressif's docker image, which has a good amount of their Software Development Kit (SDK) already installed or written to install on it. I said the last part because, as we are using their image  for our needs, we are also creating an image, runnning up an instance of it to build our firmware, and then deleting it. Espressif did the first half, but instead of deleting it, it iss publicly availble to be sourced in a dockerfile for projects needing Espressif's development framework(s).
+There is no difference to programming at this step, files can be created for each component just make sure to add them to the CMakeLists.txt file. If a folder/directory is made for header files, make sure to swap out the "." for the folder's name in INCLUDE_DIRS.
 
-To build our firmware there should only be two steps, thanks to Espressi'f socker image:
+Alongside ESP-IDF we are using Docker and its dockerfile to minimize the amount of bloat on team computers. The dockerfile will run using Espressif's docker image, which has a good amount of their Software Development Kit (SDK) already installed or written to install on it. 
 
-(1) Run this command 
-```docker run --rm -v $PWD:/project -w /project espressif/idf:latest idf.py build```
+I said the last part because, as we are using their image  for our needs, we are also creating an image, runnning up an instance of it to build our firmware, and then deleting it. Espressif did the first half, but instead of deleting it, it iss publicly availble to be sourced in a dockerfile for projects needing Espressif's development framework(s).
 
-(2) Click flash button on IDE or run Espressif's flash.py command (which would need Python since it is a python script)
+To build our firmware there should only be two steps, thanks to Espressif's [docker image](https://hub.docker.com/r/espressif/idf):
 
-The build command may be modified, as well as the rest of the dockerfile. To add libraries for the firmware either add an install step in the dockerfile or add the library as a dependecy in idf_component_yaml in main folder.
+(1) Run this command to build firmware
+### Linux
+```
+./firmware.sh
+```
 
-Make a branch off of main when first starting on a feature so that the base repository is safe and working.
+### Windows
+```
+.\firmware.bat
+```
+
+(1.5) If stuck somewhere, you can clean build files (though this deletes entire build folder and sdkconfig file)
+### Linux
+```
+./firmware.sh clean
+```
+
+### Windows
+```
+.\firmware.bat clean
+```
+
+(2) Check for .bin (binary) firmware file in /build folder
+
+(3) Click flash button on IDE or run Espressif's flash.py command in your terminal (which would need Python since it is a python script), either on windows CMD or Powershell or Linux's terminal or MacOs's terminal.
+
+The build shell/bat command may be modified, as well as the rest of the dockerfile. To add libraries for the firmware either add an install step in the dockerfile or add the library as a dependecy in idf_component_yaml in the main folder, under dependecies. Indent the library and make sure if looks like something like this 'spi_master_driver: "^2.0.0"'.
+
+Make a branch off of main when first starting to work on a feature so that the base repository is safe and always working.
 
 ---
 ## 👥 Team  
