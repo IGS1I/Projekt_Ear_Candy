@@ -56,6 +56,12 @@ dkms.conf
 
 # Build Folder(s)
 build/
+sdkconfig
+sdkconfig.old
+
+# Component Managing Folders/files
+managed_components/
+dependencies.lock
 
 # ide configs
 .vscode/
