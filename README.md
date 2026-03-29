@@ -72,8 +72,27 @@ Quick link to [Programming Section](#-programming)
     - [SKQGABE010](https://octopart.com/part/alps/SKQGABE010?utm_source=altium_a365_bom_portal) - General buttons (Power, playback mode, home, back)
 
 ---
+## 📂File Structure
+#### Folders
+- *DataSheets/* - Archive of datasheets for the hardware components of our mp3 player
+- *main/* - Main program component, housing the main program file that gets compiled to being built into firmware during build process.
+- *components/* - Major segements of our devices function
+   - *AudioProcessor/* - programming files to operate VS1053b audio processor
+   - *EmbeddedDisplay/* - programming for the painting of our display, refreshing, and backlight dimming
+   - *SDIO/* - programming that helps to access mp3 files on sd card to send to VS105b, send metadata to display, and start file transfer via usb-c wire + computer
+
+#### Exposed Files
+- *dockerFile* - file with instructions to access the esp-idf image and next steps for virtually building our firmware wihtout having to install much locally. (a dev container would be even more modular)
+- *firmware.sh* - Shell program to build firmware (for MacOS & Linux users)
+- *firmware.bat* - Batch program to build firmware (for Windows users)
+- *sdkconfig.defaults* - Settings to ESP-IDF for configuring our specific Microcontroller Unit (MCU) 
+- *CMakeLists.txt* - Main project configuration settings for CMake building
+- *LICENSE* - Use restrictions and allowences regarding this project's posting on GitHub
+- *README.md* - Project Use & general explanation (file being currently read)
+
+---
 ## 💿 Programming
-The project has been setup for ESP-IDF use with a main component and secondary components, named to fit the functions and different pieces of our device (necessary because of how ESP-isf works). 
+The project has been setup for ESP-IDF use with a main component and secondary components, named to fit the functions and different pieces of our device (necessary because of how ESP-IDF works). 
 
 Each component has a CMakeLists.txt file that describes which files are source files for the component and which are header/include files, as well as which other components it depends on (using "REQUIRES" inside of idf_component_register).
 
@@ -85,7 +104,7 @@ I said the last part because, as we are using their image  for our needs, we are
 
 To build our firmware there should only be two steps, thanks to Espressif's [docker image](https://hub.docker.com/r/espressif/idf):
 
-(1) Run this command to build firmware
+[1] Run this command to build firmware
 ### Linux
 ```
 ./firmware.sh
@@ -96,7 +115,7 @@ To build our firmware there should only be two steps, thanks to Espressif's [doc
 .\firmware.bat
 ```
 
-(1.5) If stuck somewhere, you can clean build files (though this deletes entire build folder and sdkconfig file)
+[1.5] If stuck somewhere, you can clean build files (though this deletes entire build folder and sdkconfig file)
 ### Linux
 ```
 ./firmware.sh clean
@@ -107,9 +126,9 @@ To build our firmware there should only be two steps, thanks to Espressif's [doc
 .\firmware.bat clean
 ```
 
-(2) Check for .bin (binary) firmware file in /build folder
+[2] Check for .bin (binary) firmware file in /build folder
 
-(3) Click flash button on IDE or run Espressif's flash.py command in your terminal (which would need Python since it is a python script), either on windows CMD or Powershell or Linux's terminal or MacOs's terminal.
+[3] Click flash button on IDE or run Espressif's flash.py command in your terminal (which would need Python since it is a python script), either on windows CMD or Powershell or Linux's terminal or MacOs's terminal.
 
 The build shell/bat command may be modified, as well as the rest of the dockerfile. To add libraries for the firmware either add an install step in the dockerfile or add the library as a dependecy in idf_component_yaml in the main folder, under dependecies. Indent the library and make sure if looks like something like this 'spi_master_driver: "^2.0.0"'.
 
@@ -118,17 +137,16 @@ Make a branch off of main when first starting to work on a feature so that the b
 ---
 ## 👥 Team  
 - William K. Coleman (Lead)
-- Paola Dorado Galicia 
+- Paola Dorado Galicia
+- Luciana Di Campli
+- Nellie Abrahamyan
 - Diego Cruz
+- Armando Alonso Franco
 - Rodolfo Garcia
 - Gian Castro
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
+- Nicole Rubio
+- Santiago Morales
+- Jordan Dextra
+- Diego De Armas
 ---
 
