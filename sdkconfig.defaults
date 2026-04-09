@@ -1,10 +1,10 @@
-# Default settings for ESP32-WROVER-E-N16R8
+# ESP32-WROVER with PSRAM. Flash size MUST match the module on the cable:
+# - Many dev kits are 8MB flash → use 8MB below (runtime probe matches this).
+# - Final Ear Candy board (N16) is 16MB → switch to CONFIG_ESPTOOLPY_FLASHSIZE_16MB when using that hardware.
 
-# Flash size: 16MB (N16)
-CONFIG_ESPTOOLPY_FLASHSIZE_16MB=y
-CONFIG_ESPTOOLPY_FLASHSIZE="16MB"
+CONFIG_ESPTOOLPY_FLASHSIZE_8MB=y
+CONFIG_ESPTOOLPY_FLASHSIZE="8MB"
 
 # Enable PSRAM
 CONFIG_SPIRAM=y
 CONFIG_SPIRAM_TYPE_AUTO=y
-CONFIG_SPIRAM_SIZE=-1

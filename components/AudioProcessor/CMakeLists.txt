@@ -1,3 +1,3 @@
-idf_component_register(SRCS "vs1053b.cpp" 
+idf_component_register(SRCS "vs1053b.cpp"
                         INCLUDE_DIRS "."
-                        REQUIRES "SDIO")
+                        REQUIRES "esp_driver_spi" "esp_driver_gpio")
