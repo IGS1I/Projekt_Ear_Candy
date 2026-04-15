@@ -1,0 +1,26 @@
+Prototype Library Rules
+
+1. The app will only support .mp3 files.
+2. All music will be located inside a root folder on the SD card called /Music.
+3. The app will only scan inside /Music (not the entire SD card).
+4. Every .mp3 file found in /Music or its first-level subfolders is treated as a song.
+5. Metadata such as title, artist, and album will be read from MP3 tags.
+6. Artists and albums are generated from metadata, not folder names.
+7. Every first-level folder inside /Music is treated as a playlist.
+8. Songs placed directly inside /Music are part of the Songs library but not part of any playlist.
+9. Nested folders inside playlist folders are ignored for the prototype.
+10. Unsupported files are ignored.
+
+Process
+
+python3 scanner.py
+pip3 install mutagen
+pip3 install PySide6
+
+
+methods 
+scan_music_library() finds songs and folder-playlists
+build_artists_library() creates the artist view data
+build_albums_library() creates the album view data
+
+
