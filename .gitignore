@@ -66,5 +66,5 @@ dependencies.lock
 # ide configs
 .vscode/
 
-# Python
-__pycache__/
+# python
+*__pycache__/
