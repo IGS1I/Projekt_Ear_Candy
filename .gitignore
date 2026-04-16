@@ -66,3 +66,4 @@ dependencies.lock
 # ide configs
 .vscode/
 __pycache__/
+.DS_Store
