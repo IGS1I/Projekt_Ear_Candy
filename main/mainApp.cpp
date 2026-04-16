@@ -2,16 +2,18 @@
 extern "C" {
 #endif
 
-#include "UIStudio.h++"
-#include "Backlight.h++"
+#include "UIStudio.hpp"
+#include "Backlight.hpp"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
 
 /************* Definitions *************/
 
-#define SDA_PIN 23
-#define SCL_PIN 18
-#define CS_PIN  5
-#define RES_PIN 4
-#define TE_PIN 34
+#define SDA_PIN gpio_num_t(23)
+#define SCL_PIN gpio_num_t(18)
+#define CS_PIN  gpio_num_t(5)
+#define RES_PIN gpio_num_t(4)
+#define TE_PIN  gpio_num_t(34)
 
 // Standard 16-bit (RGB565) Color Definitions
 #define RED    0xF800
@@ -28,12 +30,12 @@ void app_main(void) {
         // Main application loop
         vTaskDelay(1000 / portTICK_PERIOD_MS); // Delay for 1 second
         
-        fill_canvas(RED);
-        delay(1000);
-        fill_canvas(GREEN);
-        delay(1000);
-        fill_canvas(BLUE);
-        delay(1000);
+        display.fill_canvas(RED);
+        display.wait_for_te();
+        display.fill_canvas(GREEN);
+        display.wait_for_te();
+        display.fill_canvas(BLUE);
+        display.wait_for_te();
     }
 }
 

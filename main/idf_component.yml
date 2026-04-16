@@ -1,5 +1,5 @@
   # Add Project-Specific Dependecies here. System-wide libraries or programs can be added to Dockerfile
   # so that the container has installs the program dna can use it in our consecutive builds (e.g., Ptyhon, Ninja, etc)
-version: "0.0.1"
+# version: "0.0.1"
 
-dependencies:
+# dependencies:
