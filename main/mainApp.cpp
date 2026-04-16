@@ -24,8 +24,8 @@ extern "C" {
 
 // Create a global instance of the display driver
 DUI display(SDA_PIN, SCL_PIN, CS_PIN, RES_PIN, TE_PIN, 320, 240);
-display.init();
 void app_main(void) {
+    display.init();
     while (1) {
         // Main application loop
         vTaskDelay(1000 / portTICK_PERIOD_MS); // Delay for 1 second
