@@ -1,3 +1,3 @@
 idf_component_register(SRCS "mainApp.cpp"
-                        INCLUDE_DIRS "include"
-                        REQUIRES "AudioProcessor" "SDIO" "EmbeddedDisplay" "esp_driver_spi")
+                        INCLUDE_DIRS "."
+                        REQUIRES "AudioProcessor" "SDIO" "EmbeddedDisplay" "esp_driver_spi_master" "ledc")
