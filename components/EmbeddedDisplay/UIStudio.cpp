@@ -176,12 +176,12 @@ void DUI::char_write(int16_t x, uint16_t y, char letter, uint16_t color, uint16_
 void DUI::wait_for_te() {
     uint32_t timeout = 1000; // Timeout of 1000ms to prevent infinite blocking
     while (gpio_get_level(te) == 0 && timeout--) {
-        VTaskDelay(pdMS_TO_TICKS(1)); // Sleep for 1ms to avoid busy-waiting
+        vTaskDelay(pdMS_TO_TICKS(1)); // Sleep for 1ms to avoid busy-waiting
     };
 
     timeout = 1000; // Reset timeout for the next phase
     while (gpio_get_level(te) == 1 && timeout --) {
-        VTaskDelay(pdMS_TO_TICKS(1)); // Sleep for 1ms to avoid busy-waiting
+        vTaskDelay(pdMS_TO_TICKS(1)); // Sleep for 1ms to avoid busy-waiting
     };
 }
 
